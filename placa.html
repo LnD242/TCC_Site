@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" class="has-background-black">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Css/Reset.css">
+    <link rel="stylesheet" href="./Css/pagina1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+</head>
+<body class="has-background-black">
+
+    <header >
+        <nav class="navbar is-black container" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+            <h1 class="is-size-2 has-text-weight-medium">BFLT Control</h1>
+          
+              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+          </nav>
+     </header>
+     <br>
+     <br>
+     <br>
+     
+
+
+    <section>
+        <div class="columns">
+            <div class="column">
+            </div>
+            <div class="column is-one-quarter m-6 ">
+               
+                <div class="field">
+                    <label class="label has-text-white">Digite a placa do carro</label>
+                    <div class="control">
+                      <input id="placaInput" class="input" type="text" placeholder="Placa">
+                    </div>
+                    <p class="help"></p>
+                  <br>
+
+                  <div class="field">
+                    <label class="label has-text-white">O tempo que deseja ficar na vaga</label>
+                    <div class="control">
+                      <input id="tempo" class="input" type="text" placeholder="tempo">
+                    </div>
+                    <p class="help"></p>
+                  <br>
+
+                  <div class="field">
+                    <label class="label has-text-white">Unidade de tempo</label>
+                    <div class="control">
+                      <div class="select">
+                        <select>
+                          <option>Minutos</option>
+                          <option>Horas</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <br>
+
+                    <p class="control">
+                      <button class="button is-primary" onclick="verificarPlaca()">Prosseguir</button>
+                    </p>
+                  </div>
+                  </div>
+
+               
+                  
+                  <script>
+                    function verificarPlaca() {
+                      // Obtenha o valor do campo de entrada
+                      var placa = document.getElementById('placaInput').value;
+                      var time = document.getElementById('tempo').value;
+
+                  
+                      // Verifique se o campo está vazio
+                      if (placa.trim() !== "" && time.trim() !=="") {
+                        window.location.href = "Pagamento.html";
+                      } else {
+                        alert("Por favor, informe a placa do carro e insira o tempo desejado.");
+                      }
+                    }
+                  </script>
+            </div>
+            <div class="column">
+            </div>
+           
+          </div>
+          
+
+
+
+
+
+         
+     </section>
+     
+     
+
+</body>
+</html>

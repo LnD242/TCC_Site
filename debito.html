@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" class="has-background-black ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+</head>
+<body class="has-background-black" >
+
+
+    <header >
+        <nav class="navbar is-black container" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+            <h1 class="is-size-2 has-text-weight-medium">BFLT Control</h1>
+          
+              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+          </nav>
+     </header>
+
+
+    <br><br>
+    <br>
+<main class="container m-3">
+    <div class="field">
+      <label class="label has-text-white	">Nome</label>
+      <div class="control">
+        <input class="input is-success" id="nomee" type="text" placeholder="">
+      </div>
+    </div>
+
+    <br>
+
+    
+    <div class="field">
+      <label class="label has-text-white	">Número do Cartão</label>
+      <div class="control has-icons-left has-icons-right ">
+      
+        <input class="input is-success" id="numero" type="text" placeholder="" value="">
+        <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+
+      <br>
+      <br>
+
+
+    <div class="columns">
+      <div class="column is-one-third">
+
+        <div class="field">
+          <label class="label has-text-white	">Data</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input is-success" id="date" type="text" placeholder="" value="">
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
+          
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-third ">
+
+        <div class="field">
+          <label class="label has-text-white	">CVC</label>
+          <div class="control has-icons-left has-icons-right">
+            <input  class="input is-success" id="cvc" type="text" placeholder="" value="">
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
+         
+</div>
+      </div>
+      </div>
+
+    </div>
+
+
+   
+    
+    <div class="field">
+      <div class="control">
+        <label class="radio">
+          <input type="radio" name="question">
+          Débito
+        </label>
+        <label class="radio">
+          <input type="radio" name="question">
+          Crédito
+        </label>
+      </div>
+    </div>
+    <br>
+    <div class="field is-grouped">
+      <div class="control">
+       
+          
+        <button class="button is-link button is-primary" onclick="alerta()">  Efetuar pagamento </button>
+      </div>
+      </div>
+
+      <script>
+
+
+function alerta(){
+
+  var nome = document.getElementById('nomee').value;
+  var numero = document.getElementById('numero').value;
+  var cvc = document.getElementById('cvc').value;
+  var date = document.getElementById('date').value;
+
+
+
+  
+if(nome.trim() !==""  && numero.trim()!=="" && date.trim()!=="" && cvc.trim()!==""){
+  window.location.href = "index.html";
+  alert("pagamento realizado");
+
+}
+else{
+  alert("Por favor, preencha as informações requisitadas antes de prosseguir");
+}
+}
+       
+      </script>
+    </main>
+<br><br>
+<br>
+
+
+</body>
+</html>
