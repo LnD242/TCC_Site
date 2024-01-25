@@ -39,7 +39,7 @@
                 <div class="field">
                     <label class="label has-text-white">Digite a placa do carro</label>
                     <div class="control">
-                      <input id="placaInput" class="input" type="text" placeholder="Placa">
+                      <input id="placaInput" class="input" type="text" placeholder="Placa" maxlength="7">
                     </div>
                     <p class="help"></p>
                   <br>
@@ -56,7 +56,7 @@
                     <label class="label has-text-white">Unidade de tempo</label>
                     <div class="control">
                       <div class="select">
-                        <select>
+                        <select id="unidadeDeTempo">
                           <option>Minutos</option>
                           <option>Horas</option>
                         </select>
@@ -79,16 +79,40 @@
                       // Obtenha o valor do campo de entrada
                       var placa = document.getElementById('placaInput').value;
                       var time = document.getElementById('tempo').value;
+                      var select = document.querySelector('#unidadeDeTempo');
 
-                  
-                      // Verifique se o campo está vazio
+                      var value= select.value;
+
                       if (placa.trim() !== "" && time.trim() !=="") {
-                        window.location.href = "Pagamento.html";
+                        if(value === 'Minutos' && time.trim()<=60){
+                          window.location.href = "Pagamento.html";
+
+                    }
+                    else if (value === 'Minutos' && time.trim()>60){
+                      alert("Tempo máximo de 60 minutos");
+                    }
+
+                    if(value === 'Horas' && time.trim()<=5){ 
+                      window.location.href = "Pagamento.html";
+                    }
+                    else if (value === 'Horas' && time.trim()>5){
+                      alert("Tempo máximo de 5 horas");
+                    }
+
                       } else {
                         alert("Por favor, informe a placa do carro e insira o tempo desejado.");
                       }
+                     
+                     
+
+
+                  
+                      // Verifique se o campo está vazio
+                     
                     }
                   </script>
+
+                  
             </div>
             <div class="column">
             </div>
